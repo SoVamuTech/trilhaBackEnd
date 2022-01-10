@@ -1,22 +1,32 @@
 package com.trilha.back.financys.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Category {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String description;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "categoryId")
+    private List<Entry> entries;
 
     public Category() {
     }
 
-    public Category(Long id, String name, String description) {
+    public Category(Long id, String name, String description, List<Entry> entries) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.entries = entries;
     }
-
     public Long getId() {
         return id;
     }
@@ -41,6 +51,14 @@ public class Category {
         this.description = description;
     }
 
+    public List<Entry> getEntries() {
+        return entries;
+    }
+
+    public void setEntries(List<Entry> entries) {
+        this.entries = entries;
+    }
+
     @Override
     public String toString() {
         return "Categoria{" +
@@ -50,4 +68,5 @@ public class Category {
                 '}';
     }
 }
+
 

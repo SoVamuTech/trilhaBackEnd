@@ -1,9 +1,13 @@
 package com.trilha.back.financys.entity;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public class Entry {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String description;
@@ -11,12 +15,15 @@ public class Entry {
     private String amount;
     private LocalDate date;
     private boolean paid;
-    private Long categoryId;
+
+    @ManyToOne
+    @JoinColumn(name = "categoryId", referencedColumnName = "id")
+    private Category categoryId;
 
     public Entry() {
     }
 
-    public Entry(Long id, String name, String description, String type, String amount, LocalDate date, boolean paid, Long categoryId) {
+    public Entry(Long id, String name, String description, String type, String amount, LocalDate date, boolean paid, Category categoryId) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -83,11 +90,11 @@ public class Entry {
         this.paid = paid;
     }
 
-    public Long getCategoryId() {
+    public Category getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
+    public void setCategoryId(Category categoryId) {
         this.categoryId = categoryId;
     }
 

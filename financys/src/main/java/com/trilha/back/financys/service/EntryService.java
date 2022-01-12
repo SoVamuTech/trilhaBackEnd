@@ -1,6 +1,8 @@
 package com.trilha.back.financys.service;
 
+import com.trilha.back.financys.dto.EntryDto;
 import com.trilha.back.financys.entity.Entry;
+import com.trilha.back.financys.mapper.EntryMapper;
 import com.trilha.back.financys.repository.CategoryRepository;
 import com.trilha.back.financys.repository.EntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +19,15 @@ public class EntryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private EntryMapper mapper;
+
     public boolean validateCategoryById(long idCategory){
         return categoryRepository.findById(idCategory).isPresent();
     }
 
-    public Entry save(Entry body) {
-        return entryRepository.save(body);
+    public Entry save(EntryDto body) {
+        return entryRepository.save(mapper.dtoToEntity(body));
     }
 
     public List<Entry> findAll() {
@@ -39,12 +44,11 @@ public class EntryService {
                 : null;
     }
 
-    public Entry update(Long id,Entry body) {
+    public Entry update(Long id,EntryDto body) {
         Entry entry = entryRepository.findById(id).get();
         entry.setDescription(body.getDescription());
         entry.setName(body.getName());
         entry.setDescription(body.getDescription());
-        entry.setType(body.getType());
         entry.setAmount(body.getAmount());
         entry.setDate(body.getDate());
         entry.setPaid(body.isPaid());

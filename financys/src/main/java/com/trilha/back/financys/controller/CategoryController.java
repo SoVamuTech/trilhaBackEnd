@@ -1,7 +1,7 @@
 package com.trilha.back.financys.controller;
 
+import com.trilha.back.financys.dto.CategoryDto;
 import com.trilha.back.financys.entity.Category;
-import com.trilha.back.financys.repository.CategoryRepository;
 import com.trilha.back.financys.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ public class CategoryController {
     private CategoryService service;
 
     @PostMapping
-    public ResponseEntity<Category> create(@RequestBody Category body){
+    public ResponseEntity<Category> create(@RequestBody CategoryDto body){
        return ResponseEntity.ok(service.save(body));
     }
 
@@ -38,7 +38,7 @@ public class CategoryController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Category> update(@PathVariable Long id, @RequestBody Category body){
+    public ResponseEntity<Category> update(@PathVariable Long id, @RequestBody CategoryDto body){
         return ResponseEntity.ok(service.update(id,body));
     }
 

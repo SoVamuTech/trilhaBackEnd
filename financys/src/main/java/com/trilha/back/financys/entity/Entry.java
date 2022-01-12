@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -18,8 +19,7 @@ public class Entry {
     private Long id;
     private String name;
     private String description;
-    private String type;
-    private String amount;
+    private BigDecimal amount;
     private LocalDate date;
     private boolean paid;
 

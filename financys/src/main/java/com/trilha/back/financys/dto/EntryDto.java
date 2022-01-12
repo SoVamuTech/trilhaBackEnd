@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -14,8 +15,7 @@ public class EntryDto {
 
     private String name;
     private String description;
-    private String type;
-    private String amount;
+    private BigDecimal amount;
     private LocalDate date;
     private boolean paid;
 

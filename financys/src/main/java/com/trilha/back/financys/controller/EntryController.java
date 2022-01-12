@@ -4,8 +4,10 @@ import com.trilha.back.financys.entity.Category;
 import com.trilha.back.financys.entity.Entry;
 import com.trilha.back.financys.repository.CategoryRepository;
 import com.trilha.back.financys.repository.EntryRepository;
+import com.trilha.back.financys.service.EntryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,53 +18,37 @@ import java.util.Objects;
 public class EntryController {
 
     @Autowired
-    private EntryRepository entryRepository;
-
-    @Autowired
-    private CategoryRepository categoryRepository;
+    private EntryService service;
 
     @PostMapping
-    public Long create(@RequestBody Entry body) {
-        if (categoryRepository.findById(body.getCategoryId().getId()).isPresent()) {
-            Entry entry = entryRepository.save(body);
-            return entry.getId();
-        }
-        System.out.println("Erro! Não existe a categoria na base de dados!");
-        return null;
+    public ResponseEntity<Object> create(@RequestBody Entry body) {
+        if (service.validateCategoryById(body.getCategoryId().getId()))
+            return ResponseEntity.ok(service.save(body));
+        return ResponseEntity.badRequest().body("Erro! Não existe a categoria na base de dados!");
     }
 
     @GetMapping
-    public List<Entry> read(@RequestParam(required = false) String situacao) {
+    public ResponseEntity<List<Entry>> read(@RequestParam(required = false) String situacao) {
         if (Objects.isNull(situacao))
-            return entryRepository.findAll();
-        return entryRepository
-                .findAllByPaid(situacao.equalsIgnoreCase("pagos"));
+            return ResponseEntity.ok(service.findAll());
+        return ResponseEntity.ok(service
+                .findAllByPaid(situacao.equalsIgnoreCase("pagos"))
+                );
     }
 
     @GetMapping("/{id}")
-    public Entry findBy(@PathVariable Long id) {
-        return entryRepository.findById(id).isPresent()
-                ? null
-                : entryRepository.findById(id).get();
+    public ResponseEntity<Entry> findBy(@PathVariable Long id) {
+        return ResponseEntity.ok(service.findById(id));
     }
 
     @PutMapping("/{id}")
-    public Entry update(@PathVariable Long id, @RequestBody Entry body) {
-        Entry entry = entryRepository.findById(id).get();
-        entry.setDescription(body.getDescription());
-        entry.setName(body.getName());
-        entry.setDescription(body.getDescription());
-        entry.setType(body.getType());
-        entry.setAmount(body.getAmount());
-        entry.setDate(body.getDate());
-        entry.setPaid(body.isPaid());
-        entry.setCategoryId(body.getCategoryId());
-        return entryRepository.save(entry);
+    public ResponseEntity<Entry> update(@PathVariable Long id, @RequestBody Entry body) {
+        return ResponseEntity.ok(service.update(id,body));
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable Long id) {
-        entryRepository.deleteById(id);
+        service.deleteById(id);
     }
 }

@@ -2,8 +2,10 @@ package com.trilha.back.financys.controller;
 
 import com.trilha.back.financys.entity.Category;
 import com.trilha.back.financys.repository.CategoryRepository;
+import com.trilha.back.financys.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,37 +15,36 @@ import java.util.List;
 public class CategoryController {
 
     @Autowired
-    private CategoryRepository repository;
+    private CategoryService service;
 
     @PostMapping
-    public Long create(@RequestBody Category body){
-       Category c1 = repository.save(body);
-        return c1.getId();
+    public ResponseEntity<Category> create(@RequestBody Category body){
+       return ResponseEntity.ok(service.save(body));
     }
 
     @GetMapping
-    public List<Category> read(){
-        return repository.findAll();
+    public ResponseEntity<List<Category>> read(){
+        return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping("/{id}")
-    public Category findBy(@PathVariable Long id){
-        return repository.findById(id).isPresent()
-                ? null
-                : repository.findById(id).get();
+    public ResponseEntity<Category> findBy(@PathVariable Long id){
+        return ResponseEntity.ok(service.findById(id));
+    }
+
+    @GetMapping("/nome_categoria/{nameCat}")
+    public ResponseEntity<Long> idCategoryByName(@PathVariable String nameCat){
+        return ResponseEntity.ok(service.idCategoryByName(nameCat));
     }
 
     @PutMapping("/{id}")
-    public Category update(@PathVariable Long id, @RequestBody Category body){
-        Category category = repository.findById(id).get();
-        category.setDescription(body.getDescription());
-        category.setName(body.getName());
-        return repository.save(category);
+    public ResponseEntity<Category> update(@PathVariable Long id, @RequestBody Category body){
+        return ResponseEntity.ok(service.update(id,body));
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable Long id){
-        repository.deleteById(id);
+        service.deleteById(id);
     }
 }

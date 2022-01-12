@@ -9,11 +9,10 @@ import java.util.List;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String description;
-
     @JsonIgnore
     @OneToMany(mappedBy = "categoryId")
     private List<Entry> entries;

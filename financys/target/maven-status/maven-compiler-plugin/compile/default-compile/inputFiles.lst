@@ -1,4 +1,9 @@
 C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\controller\EntryController.java
+C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\service\EntryService.java
+C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\dto\ChartDto.java
+C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\service\CategoryService.java
+C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\dto\CategoryDto.java
+C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\dto\EntryDto.java
 C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\entity\Category.java
 C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\FinancysApplication.java
 C:\Users\devFlavius\StudioProjects\gabaritoTrilhaBack\trilhaBackEnd\financys\src\main\java\com\trilha\back\financys\repository\CategoryRepository.java

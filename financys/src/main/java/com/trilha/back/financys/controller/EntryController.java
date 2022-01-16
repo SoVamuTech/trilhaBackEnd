@@ -68,14 +68,5 @@ public class EntryController {
         }catch (Exception ex){
             throw new CalculaException("Erro, não pode ser divido por 0");
         }
-
-    }
-
-    @ExceptionHandler
-    public ResponseEntity<ErrorObject> handlerException(CalculaException ex){
-        return ResponseEntity.badRequest()
-                .body(new ErrorObject(HttpStatus.BAD_REQUEST.value(),
-                        System.currentTimeMillis()
-                        ,ex.getMessage()));
     }
 }

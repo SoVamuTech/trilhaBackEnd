@@ -3,6 +3,8 @@ package com.trilha.back.financys.controller;
 import com.trilha.back.financys.dto.ChartDto;
 import com.trilha.back.financys.dto.EntryDto;
 import com.trilha.back.financys.entity.Entry;
+import com.trilha.back.financys.exceptions.CalculaException;
+import com.trilha.back.financys.exceptions.ErrorObject;
 import com.trilha.back.financys.service.EntryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,15 +49,6 @@ public class EntryController {
         return ResponseEntity.ok(service.grafico());
     }
 
-    @GetMapping("/calcula/{x}/{y}")
-    public Integer calculaMedia(@PathVariable Integer x,@PathVariable Integer y) {
-        try {
-            return (x / y);
-        } catch (ArithmeticException ex) {
-            return 0;
-        }
-    }
-
     @PutMapping("/{id}")
     public ResponseEntity<Entry> update(@PathVariable Long id, @RequestBody @Valid EntryDto body) {
         return ResponseEntity.ok(service.update(id,body));
@@ -64,5 +58,24 @@ public class EntryController {
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable Long id) {
         service.deleteById(id);
+    }
+
+
+    @GetMapping("/calcula/{x}/{y}")
+    public Integer calculaMedia(@PathVariable Integer x,@PathVariable Integer y) {
+        try {
+            return (x / y);
+        }catch (Exception ex){
+            throw new CalculaException("Erro, não pode ser divido por 0");
+        }
+
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorObject> handlerException(CalculaException ex){
+        return ResponseEntity.badRequest()
+                .body(new ErrorObject(HttpStatus.BAD_REQUEST.value(),
+                        System.currentTimeMillis()
+                        ,ex.getMessage()));
     }
 }

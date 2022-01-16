@@ -1,5 +1,6 @@
 package com.trilha.back.financys.controller;
 
+import com.trilha.back.financys.dto.ChartDto;
 import com.trilha.back.financys.dto.EntryDto;
 import com.trilha.back.financys.entity.Entry;
 import com.trilha.back.financys.service.EntryService;
@@ -39,6 +40,10 @@ public class EntryController {
         return ResponseEntity.ok(service.findById(id));
     }
 
+    @GetMapping("/grafico")
+    public ResponseEntity<List<ChartDto>> grafico(){
+        return ResponseEntity.ok(service.grafico());
+    }
     @PutMapping("/{id}")
     public ResponseEntity<Entry> update(@PathVariable Long id, @RequestBody EntryDto body) {
         return ResponseEntity.ok(service.update(id,body));

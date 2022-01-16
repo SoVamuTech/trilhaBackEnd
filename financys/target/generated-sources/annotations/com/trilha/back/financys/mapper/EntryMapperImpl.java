@@ -2,13 +2,12 @@ package com.trilha.back.financys.mapper;
 
 import com.trilha.back.financys.dto.EntryDto;
 import com.trilha.back.financys.entity.Entry;
-import java.math.BigDecimal;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-12T00:44:26-0200",
+    date = "2022-01-13T09:57:25-0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11 (Oracle Corporation)"
 )
 @Component
@@ -24,9 +23,7 @@ public class EntryMapperImpl implements EntryMapper {
 
         entry.setName( dto.getName() );
         entry.setDescription( dto.getDescription() );
-        if ( dto.getAmount() != null ) {
-            entry.setAmount( new BigDecimal( dto.getAmount() ) );
-        }
+        entry.setAmount( dto.getAmount() );
         entry.setDate( dto.getDate() );
         entry.setPaid( dto.isPaid() );
         entry.setCategoryId( dto.getCategoryId() );
@@ -44,9 +41,7 @@ public class EntryMapperImpl implements EntryMapper {
 
         entryDto.setName( entity.getName() );
         entryDto.setDescription( entity.getDescription() );
-        if ( entity.getAmount() != null ) {
-            entryDto.setAmount( entity.getAmount().toString() );
-        }
+        entryDto.setAmount( entity.getAmount() );
         entryDto.setDate( entity.getDate() );
         entryDto.setPaid( entity.isPaid() );
         entryDto.setCategoryId( entity.getCategoryId() );

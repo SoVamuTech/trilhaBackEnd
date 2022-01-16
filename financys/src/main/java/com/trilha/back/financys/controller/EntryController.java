@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,7 +21,7 @@ public class EntryController {
     private EntryService service;
 
     @PostMapping
-    public ResponseEntity<Object> create(@RequestBody EntryDto body) {
+    public ResponseEntity<Object> create(@RequestBody @Valid EntryDto body) {
         if (service.validateCategoryById(body.getCategoryId().getId()))
             return ResponseEntity.ok(service.save(body));
         return ResponseEntity.badRequest().body("Erro! Não existe a categoria na base de dados!");
@@ -45,7 +46,7 @@ public class EntryController {
         return ResponseEntity.ok(service.grafico());
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Entry> update(@PathVariable Long id, @RequestBody EntryDto body) {
+    public ResponseEntity<Entry> update(@PathVariable Long id, @RequestBody @Valid EntryDto body) {
         return ResponseEntity.ok(service.update(id,body));
     }
 

@@ -45,6 +45,16 @@ public class EntryController {
     public ResponseEntity<List<ChartDto>> grafico(){
         return ResponseEntity.ok(service.grafico());
     }
+
+    @GetMapping("/calcula/{x}/{y}")
+    public Integer calculaMedia(@PathVariable Integer x,@PathVariable Integer y) {
+        try {
+            return (x / y);
+        } catch (ArithmeticException ex) {
+            return 0;
+        }
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Entry> update(@PathVariable Long id, @RequestBody @Valid EntryDto body) {
         return ResponseEntity.ok(service.update(id,body));

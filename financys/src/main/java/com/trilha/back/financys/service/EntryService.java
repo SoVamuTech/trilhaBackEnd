@@ -26,7 +26,7 @@ public class EntryService {
     @Autowired
     private EntryMapper mapper;
 
-    public boolean validateCategoryById(long idCategory){
+    public boolean validateCategoryById(long idCategory) {
         return categoryRepository.findById(idCategory).isPresent();
     }
 
@@ -48,7 +48,7 @@ public class EntryService {
                 : null;
     }
 
-    public Entry update(Long id,EntryDto body) {
+    public Entry update(Long id, EntryDto body) {
         Entry entry = entryRepository.findById(id).get();
         entry.setDescription(body.getDescription());
         entry.setName(body.getName());
@@ -66,17 +66,17 @@ public class EntryService {
 
     public List<ChartDto> grafico() {
         List<ChartDto> retorno = new ArrayList<>();
-        List<Category> categoryList =  categoryRepository.findAll();
-        BigDecimal total = BigDecimal.ZERO;
-        for (int i = 0 ; i <= categoryList.size()-1; i++){
+        List<Category> categoryList = categoryRepository.findAll();
 
-            for (int j = 0 ; j <= categoryList.get(i).getEntries().size()-1; j++){
-               total = total.add(categoryList.get(i).getEntries().get(j).getAmount());
-            }
-            retorno.add(new ChartDto(categoryList.get(i).getName(),
-                                    categoryList.get(i).getType(),
-                                    total));
-        }
+        categoryList.forEach(category ->
+                retorno.add(new ChartDto(category.getName(), category.getType(),
+                        category
+                                .getEntries()
+                                .stream()
+                                .map(Entry::getAmount)
+                                .reduce(BigDecimal.ZERO, BigDecimal::add))
+                )
+        );
         return retorno;
     }
 }

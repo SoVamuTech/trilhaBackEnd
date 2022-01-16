@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -16,20 +18,20 @@ import java.time.LocalDate;
 public class EntryDto {
 
     @NotBlank(message = "O Valor do nome não pode ser nulo ou Vazio")
-    @Size(min = 3, max = 45, message = "{tamanho.message}")
+    @Size(min = 3, max = 45, message = "Tamanho da menssagem não esta correto")
     private String name;
 
     @NotBlank(message = "O Valor do descrição não pode ser nulo ou Vazio")
-    @Size(min = 15, max = 150, message = "{tamanho.message}")
+    @Size(min = 15, max = 150, message = "Tamanho da menssagem não esta correto")
     private String description;
 
-    @NotBlank(message = "O Valor do valor não pode ser nulo ou Vazio")
+    @NotNull(message = "O Valor do quantidade não pode ser nulo ou Vazio" )
+    @Min(value = 0, message = "O valor nao pode ser menor que 0")
     private BigDecimal amount;
 
-    @NotBlank(message = "O Valor do data não pode ser nulo ou Vazio")
     private LocalDate date;
 
-    @NotBlank(message = "O Valor do pagamento não pode ser nulo ou Vazio")
+    @NotNull(message = "O Valor se esta pago ou pendente não pode ser nulo ou Vazio" )
     private boolean paid;
 
     private Category categoryId;

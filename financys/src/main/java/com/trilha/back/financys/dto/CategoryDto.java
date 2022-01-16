@@ -13,15 +13,15 @@ import javax.validation.constraints.Size;
 public class CategoryDto {
 
     @NotBlank(message = "O Valor do nome não pode ser nulo ou Vazio")
-    @Size(min = 3, max = 15, message = "{tamanho.message}")
+    @Size(min = 3, max = 15, message = "Tamanho da menssagem não esta correto")
     private String name;
 
     @NotBlank(message = "O Valor da descrição não pode ser nulo ou Vazio")
-    @Size(min = 15, max = 50, message = "{tamanho.message}")
+    @Size(min = 15, max = 50, message = "Tamanho da menssagem não esta correto")
     private String description;
 
     @NotBlank(message = "O Valor do type não pode ser nulo ou Vazio")
-    @Size(min = 3, max = 10, message = "{tamanho.message}")
+    @Size(min = 3, max = 10, message = "Tamanho da menssagem não esta correto")
     private String type;
 
 }

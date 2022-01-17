@@ -1,46 +1,46 @@
 <h1 align="center">
-    <img src="https://ik.imagekit.io/j5g11jplqm5/NTT-Data-Logo_4rrWLwgl_.png?updatedAt=1636466995979">
+    <img src="https://user-images.githubusercontent.com/96594294/149683574-9d5e207f-9ad6-4f33-86dd-e301e09816e6.png">
 </h1>
 
-- [Sobre](#📄-sobre)
-- [Desafios](#🚀-desafios)
+## 👋 Bem-Vindo
 
-## 📄 Sobre
-
-O projeto <b>Financys</b> é um projeto de controle financeiro criado dentro do programa <b>Cybertron</b> com a finalidade de estudarmos e colocarmos em prática o Spring Boot diante de desafios teóricos e práticos.
-
-## 🚀 Desafios 
-
-<h3 >
-    🎯 Desafio 1<br>
-</h3>
-
-<p>
-
-a) Com suas palavras defina o que é um sistema de controle de versões (VCS)? (máx 10
-linhas)<br>
-
-R: O controle de versão tem como objetivo rastrear e gerenciar as alterações em códigos de
-projetos de software, ajudando as equipes a trabalhar de forma mais rápida. Mantém o
-registro de todas as modificações feitas ao longo do tempo, assim, se um erro for cometido,
-os desenvolvedores podem voltar e comparar o código com versões anteriores para poder
-corrigir o erro. Trabalhando em equipe, pode acontecer de dois desenvolvedores alterarem
-uma mesma parte do código, o controle de versão ajuda a equipe rastreando essas
-mudanças e ajudando a evitar conflito em trabalhos simultâneos.<br>
-
-b) Cite 5 vantagens em utilizar um VCS:<br>
-
-R: Preserva a eficiência e agilidade da equipe; ajuda na análise da causa raíz dos bugs; ser
-capaz de rastrear cada alteração feita no código e ainda deixar uma mensagem
-descrevendo a mudança; criar uma ramificação para nos beneficiar da capacidade de
-trabalhar em fluxos independentes de mudança e segurança, cada software de controle de
-versão usa mecanismos para evitar qualquer tipo de invasão de agentes infecciosos nos
-arquivos. Além do mais, somente usuários com permissão poderão mexer no código.<br>
-
-c) Cite 3 exemplos de VCS:<br>
-
-R: Git, TFS, SVN (Subversion)
-
-</p>
+### Este repositório git tem como objetivo auxiliar os guias a padronizar e escalar os ensinamentos e experiências de cada mochileiro.
 
 
+### Todos os códigos aqui escritos foram seguindo o material disponibilizado na trilha a fim de verificar a veracidade do conteúdo exigido pela trilha back-end java. 
+
+## 🤷‍♂️ Obrigações dos Guias
+Os guias tem como obrigação manter as informações atualizadas dos nosso mochileiros, questionar e avaliar seu conhecimento e desempenho. Além de ser uma fonte de conhecimento e experiência.
+
+## 👇 Imagem Relevante das Obrigações dos Guias
+<img  src="https://user-images.githubusercontent.com/96594294/149683738-63f75a6e-1868-410f-830b-3b6f7134b4de.png">
+
+## 📚 Lista de Desafios
+- [Desafio 1](#-Desafio-1)
+- [Desafio 2](#-Desafio-2)
+- [Desafio 3](#-Desafio-3)
+- [Desafio 4](#-Desafio-4)
+- [Desafio 5](#-Desafio-5)
+- [Desafio 6](#-Desafio-6)
+- [Desafio 7](#-Desafio-7)
+- [Desafio 8](#-Desafio-8)
+- [Integração](#-Integração)
+
+## 🎯 Desafio 1
+
+### 👩‍💻 Descrição Técnica
+Este desafio tem como objetivo criar e configurar a máquina para fazer todos os desafios, além de ensinar a fazer um readme.md bonito para adicionar todas as respostas teóricas na brach main facilitando a correção das perguntas teóricas e enriquecendo o seu repositório.
+### 💡 Dicas e truques
+Este desafio é importante para o versionamento das atividades conceitos de versionamento estaram presentes em todo o restante da trilha por isso devemos analizar os seguintes pontos:
+- Cada branch do desafio deve ter os desafios anteriores e o atual que o mochileiro está fazendo, após terminar ele irá margear a branch para a main;
+- Este repositório está no padrão que deve ser seguido e entregue os desafios no final da trilha;
+- O readme.md pode ser utilizado para mostrar ao mochileiro que seu repositório não está versionado corretamente, sempre cobrar ao longo da trilha que este arquivo esteja versionado da forma correta;
+- Passar a ideia que a main sempre tem que estar atualizada e que ela pode ser o código que vai para "produção", além de entender que uma branch desatualizada pode prejudicar na frente.
+### 🎉 Criterios de Aceite da Avaliação
+- Nome correto do repositório;
+- Respostas teóricas corretas;
+- Maquina já configurada;
+- Readme.md Bonito esteticamente.
+
+### 📚 Retornar a lista de desafio
+[Voltar](#-Lista-de-Desafios)

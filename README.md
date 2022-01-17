@@ -20,11 +20,7 @@ Os guias tem como obrigação manter as informações atualizadas dos nosso moch
 - [Desafio 2](#-Desafio-2)
 - [Desafio 3](#-Desafio-3)
 - [Desafio 4](#-Desafio-4)
-- [Desafio 5](#-Desafio-5)
-- [Desafio 6](#-Desafio-6)
-- [Desafio 7](#-Desafio-7)
-- [Desafio 8](#-Desafio-8)
-- [Integração](#-Integração)
+
 
 ## 🎯 Desafio 1
 

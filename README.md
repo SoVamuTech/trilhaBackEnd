@@ -16,14 +16,14 @@ Os guias tem como obrigação manter as informações atualizadas dos nosso moch
 <img  src="https://user-images.githubusercontent.com/96594294/149683738-63f75a6e-1868-410f-830b-3b6f7134b4de.png">
 
 ## 📚 Lista de Desafios
-- [Desafio 1](#-Desafio1)
-- [Desafio 2](#-Desafio2)
-- [Desafio 3](#-Desafio3)
-- [Desafio 4](#-Desafio4)
-- [Desafio 5](#-Desafio5)
-- [Desafio 6](#-Desafio6)
-- [Desafio 8](#-Desafio7)
-- [Integração](#-Desafio8)
+- [Desafio 1](#-Desafio-1)
+- [Desafio 2](#-Desafio-2)
+- [Desafio 3](#-Desafio-3)
+- [Desafio 4](#-Desafio-4)
+- [Desafio 5](#-Desafio-5)
+- [Desafio 6](#-Desafio-6)
+- [Desafio 8](#-Desafio-7)
+- [Integração](#-Desafio-8)
 
 ## 🎯 Desafio 1
 
@@ -42,4 +42,4 @@ Este desafio é importante para o versionamento das atividades conceitos de vers
 - Readme.md Bonito esteticamente.
 
 ### 📚 Retornar a lista de desafio
-[Voltar](#-ListadeDesafios)
+[Voltar](#-Lista-de-Desafios)

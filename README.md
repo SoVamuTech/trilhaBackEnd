@@ -10,7 +10,7 @@
 ### Todos os códigos aqui escritos foram seguindo o material disponibilizado na trilha a fim de verificar a veracidade do conteúdo exigido pela trilha back-end java. 
 
 ## 🤷‍♂️ Obrigações dos Guias
-    Nos guias temos como obrigação manter as informações atualizadas dos nosso mochileiros, questionar e avaliar seu conhecimento e desempenho. Além de ser uma fonte de conhecimento e experiência.
+Os guias tem como obrigação manter as informações atualizadas dos nosso mochileiros, questionar e avaliar seu conhecimento e desempenho. Além de ser uma fonte de conhecimento e experiência.
 
 ## 👇 Imagem Relevante das Obrigações dos Guias
 <img  src="https://user-images.githubusercontent.com/96594294/149683738-63f75a6e-1868-410f-830b-3b6f7134b4de.png">
@@ -42,4 +42,4 @@ Este desafio é importante para o versionamento das atividades conceitos de vers
 - Readme.md Bonito esteticamente.
 
 ### 📚 Retornar a lista de desafio
-[Voltar](#-📚ListadeDesafios)
+[Voltar](#-ListadeDesafios)

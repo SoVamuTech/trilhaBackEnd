@@ -115,3 +115,23 @@ Este ponto que o mochileiro faz o relacionamento na base de dados de forma corre
 
 ### 📚 Retornar a lista de desafio
 [Voltar](#-Lista-de-Desafios)
+
+## 🎯 Desafio 5
+
+### 👩‍💻 Descrição Técnica
+No desafio 5 o mochileiro implementa a camanda de service e aprende todas as camadas da aplicação, separando finalmente as regras de negocio da camada de controller que estavam sendo exigidas até o momento. Precisa implementar também o ResponseEntity na camada de controller refatorando pela primeira vez o codigo.
+### 💡 Dicas e truques
+- Explicar a importancia da ResponseEntity e seu retorno com os codigos de forma correta, sobre a tipagem do retorno da ResponseEntity;
+- Pedir para o mochileiro tirar todas as injeções de dependencia referentes ao repository do seus controllers para refatorar, assim levando toda a regra de negocio para o service;
+- Usar a analogia do Restaurante e das camadas da API, (Garçom == Controller, Cozinheiro == Service, Despensa == Repository), conversando com ele para entender oque cada camada faz dentro do sistema.  
+
+### 🎉 Criterios de Aceite da Avaliação
+- Ter criado a brach corretamente seguindo o desafio;
+- Respostas teóricas corretas;
+- Código bem escrito e identado corretamente;
+- Verificar se o repository não esta mais na camada de controller;
+- Se todas as regras de negocio e refatoração foram feitas corretamente;
+- Pedir para fazer todos os processos do CRUD para ver se estão com o retorno correto e se não quebrou nada na refatoração.
+
+### 📚 Retornar a lista de desafio
+[Voltar](#-Lista-de-Desafios)

@@ -18,6 +18,7 @@ import java.util.Objects;
 
 @RestController
 @RequestMapping("/lancamentos")
+@CrossOrigin(origins = "*")
 public class EntryController {
 
     @Autowired
